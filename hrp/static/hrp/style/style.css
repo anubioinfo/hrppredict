@@ -1,0 +1,58 @@
+ul.errorlist {
+    padding-left: 0;
+}
+
+ul.errorlist > li {
+    list-style: none;
+}
+
+.navbar {
+    border-radius: 0;
+}
+
+.navbar-brand {
+    font-family: 'Satisfy', cursive;
+}
+
+.glyphicon-star {
+    color: #CCCCCC;
+    font-size: 16px;
+}
+
+.glyphicon-star.active {
+    color: #FDB230;
+}
+.left {
+    float: left;
+    display: inline-block;
+    width: 45%;
+    margin-left: 35px;
+}
+
+.right {
+    float: right;
+    display: inline-block;
+    width: 45%;
+    margin-top:-45px;
+}
+.message_block {
+    border-radius: 12px;
+    display: block;
+    font-size: 16px;
+    margin-top: 10px;
+    padding: 12px 12px 12px 60px;
+}
+
+.color1 {
+    background-color: gray;
+    color: white;
+    font-weight: bold;
+}
+
+.color2 {
+    background-color: wheat;
+}
+
+.color3 {
+    background-color: plum;
+}

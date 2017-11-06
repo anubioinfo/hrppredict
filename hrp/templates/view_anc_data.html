@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+{% block title %}ANC Data{% endblock %}
+
+{% block body %}
+<div class="container-fluid">
+
+    <div class="row">
+        <div class="col-sm-12 col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    {% if predict %}
+                        <br><h4><strong>Prediction:  {{ predict }}</strong></h4><br>
+                    {% endif %}
+                    <div class="left">
+                        <div class="form-group">
+                            <label>
+                                Weeks of pregnancy:
+                            </label>
+                            <span>
+                                {{weeks_of_preg}}
+                            </span>
+                        </div>
+
+                         <div class="form-group">
+                            <label>
+                                Age:
+                            </label>
+                            <span>
+                                {{age}}
+                            </span>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label>
+                                HB Level:
+                            </label>
+                            <span>
+                                 {{hb}}
+                            </span>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label>
+                                BP Systolic:
+                            </label>
+                            <span>
+                                {{bp_systolic}}
+                            </span>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label>
+                                BP Diastolic:
+                            </label>
+                            <span>
+                                {{bp_diastolic}}
+                            </span>
+                        </div>
+                    </div>
+                     <div class="right">
+                         {% load static %}
+                         {% if predict == 'hrp' %}
+                            <img src="{% static 'hrp/images/hrp.png' %}" class="img-responsive">
+                         {% else %}
+                            <img src="{% static 'hrp/images/normal.png' %}" class="img-responsive">
+                         {% endif %}
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+         <div class="col-sm-12 col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    {% autoescape on %}
+                    <span class="message_block color1" style="">
+                        {{p_text |safe}}
+                    </span>
+                    <span class="message_block color2" style="">
+                    {{low_hb_text |safe}}
+                    </span>
+                    <span class="message_block color3" style="">
+                    {{high_bp_text |safe}}
+                    </span>
+                    {% endautoescape %}
+                </div>
+            </div>
+         </div>
+    </div>
+
+</div>
+
+{% endblock %}
+

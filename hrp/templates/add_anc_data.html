@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% block title %}ANC Data{% endblock %}
+
+{% block body %}
+<div class="container-fluid">
+
+    <div class="row">
+        <div class="col-sm-12 col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h3>Add ANC data to predict the HRP</h3><br><br>
+                    {% if error_message %}
+                        <p><strong>{{ error_message }}</strong></p>
+                    {% endif %}
+                    <div class="left">
+                    <form class="form-horizontal" role="form" action="{% url 'add_anc_data'%}" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label class="control-label col-sm-6" for="weeks">
+                                Weeks of pregnancy:
+                            </label>
+                            <div class="col-sm-6">
+                                <input id="weeks" maxlength="30" name="weeks" type="text" required>
+                            </div>
+                        </div>
+
+
+                         <div class="form-group">
+                            <label class="control-label col-sm-6" for="age">
+                                Age:
+                            </label>
+                            <div class="col-sm-6">
+                                <input id="age" maxlength="30" name="age" type="text" required>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-6" for="hb">
+                                HB Level:
+                            </label>
+                            <div class="col-sm-6">
+                                <input id="hb" maxlength="30" name="hb" type="text" required>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-6" for="systolic">
+                                BP Systolic:
+                            </label>
+                            <div class="col-sm-6">
+                                <input id="systolic" maxlength="30" name="systolic" type="text" required>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-6" for="diastolic">
+                                BP Diastolic:
+                            </label>
+                            <div class="col-sm-6">
+                                <input id="diastolic" maxlength="30" name="diastolic" type="text" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-6">
+                                <button type="submit" class="btn btn-success">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                    </div>
+                    <div class="right">
+                        {% load static %}
+                        <img src="{% static 'hrp/images/think.png' %}" class="img-responsive">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}
+
