@@ -52,33 +52,28 @@ hrppredict/
   pip install django
 
 
-Setup Instructions
+## Setup Instructions
 
 Clone the repository
-
 git clone https://github.com/anubioinfo/hrppredict
 
 
 Navigate to the project directory
-
 cd hrppredict
 
 
 Start the Django development server
-
 python3 manage.py runserver
 
 
 Open the application in your browser
-
 http://127.0.0.1:8000/
 
-How to Use the Tool
-
+## How to Use the Tool
 This PoC demonstrates how a simple ML model can assist in early identification of high-risk pregnancy based on ANC input parameters.
 Once the application is running:
-Enter the following ANC inputs:
 
+Enter the following ANC inputs:
 - Weeks of Pregnancy
 - Age
 - HB Level
@@ -89,14 +84,14 @@ Click Submit
 The tool will process the inputs through the ML classification model and display:
 Predicted HRP risk category
 
-Simple, explanatory suggestions
+## Simple, explanatory suggestions
 This project illustrates how AI could support community health workers (e.g., ANMs) in decision support workflows.
 
-Disclaimer
+## Disclaimer
 This project uses dummy/generated data and is for demonstration only.
 It must not be used for real-world clinical or medical decision-making.
 
-A production-grade solution would require:
+## A production-grade solution would require:
 Real ANC datasets
 Proper ML model development and validation
 Clinical expert review
